@@ -17,4 +17,5 @@ if (req.body.session.new === true) {
     });
     userStates[req.body.session.user_id] = userState;
   }
+  return userState;
 }
