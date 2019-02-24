@@ -2,16 +2,12 @@
 
 import express from "express";
 import { createResponse } from "./src/createResponse";
-import { parseRequest } from "./src/parseRequest";
-import { commandDefinitions } from "./src/stepDefinitions";
 import { getNextState } from './src/getNextState';
 
 const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-
-let userStates = {};
 
 app.post("/", function(req, res) {
   const userState = getNextState(req);
